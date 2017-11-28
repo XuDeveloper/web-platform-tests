@@ -3,7 +3,7 @@ function get_host_info() {
   var HTTP_PORT = '80';
   var HTTP_PORT2 = '{{ports[http][1]}}';
   var HTTPS_PORT = '{{ports[https][0]}}';
-  var ORIGINAL_HOST = '127.0.0.1';
+  var ORIGINAL_HOST = '10.17.86.132';
   var REMOTE_HOST = (ORIGINAL_HOST === 'localhost') ? '127.0.0.1' : ('www1.' + ORIGINAL_HOST);
   var OTHER_HOST = '{{domains[www2]}}';
 
@@ -14,11 +14,8 @@ function get_host_info() {
     ORIGINAL_HOST: ORIGINAL_HOST,
     REMOTE_HOST: REMOTE_HOST,
 
-    // 修改点！！！
-    // 如果web-platform-tests里面所有文件放在htdocs里面的话  修改IP!!!
     HTTP_ORIGIN: 'http://' + ORIGINAL_HOST + ':' + HTTP_PORT,
-    // 如果放在web-platform-tests目录下
-    // HTTPS_ORIGIN: 'https://' + ORIGINAL_HOST + ':' + HTTPS_PORT + "/web-platform-tests/",
+    HTTPS_ORIGIN: 'https://' + ORIGINAL_HOST + ':' + HTTPS_PORT,
     HTTPS_ORIGIN_WITH_CREDS: 'https://foo:bar@' + ORIGINAL_HOST + ':' + HTTPS_PORT,
     HTTP_ORIGIN_WITH_DIFFERENT_PORT: 'http://' + ORIGINAL_HOST + ':' + HTTP_PORT2,
     HTTP_REMOTE_ORIGIN: 'http://' + REMOTE_HOST + ':' + HTTP_PORT,
