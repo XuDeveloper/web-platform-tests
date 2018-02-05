@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
 <title>Animatable.animate</title>
-<link rel="help" href="https://w3c.github.io/web-animations/#dom-animatable-animate">
+<link rel="help" href="https://drafts.csswg.org/web-animations/#dom-animatable-animate">
 <script src="/resources/testharness.js"></script>
 <script src="/resources/testharnessreport.js"></script>
 <script src="../../testcommon.js"></script>
@@ -170,7 +170,7 @@ async_test(t => {
 test(t => {
   const div = createDiv(t);
   const anim = div.animate({ opacity: [ 0, 1 ] }, 2000);
-  assert_equals(anim.playState, 'pending');
+  assert_equals(anim.playState, 'running');
 }, 'Element.animate() calls play on the Animation');
 
 // Tests on CSSPseudoElement
